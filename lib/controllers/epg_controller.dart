@@ -53,4 +53,37 @@ class EpgController extends GetxController {
     _programs.clear();
     update();
   }
+
+  Future<void> refreshEpgData() async {
+    // Refresh EPG data for all channels
+    _isLoading.value = true;
+    try {
+      // Clear existing programs
+      _programs.clear();
+      // This would typically reload from database or API
+      // For now, just update the loading state
+      update();
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to refresh EPG: $e');
+    } finally {
+      _isLoading.value = false;
+    }
+  }
+
+  Future<void> loadEpgForDate(DateTime date) async {
+    _isLoading.value = true;
+    try {
+      // Load EPG data for all channels for the given date
+      final epgData = await DatabaseService.instance.getEpgForDate(date);
+      _programs.value = epgData;
+    } catch (e) {
+      Get.snackbar('Error', 'Failed to load EPG for date: $e');
+    } finally {
+      _isLoading.value = false;
+    }
+  }
+
+  List<EpgProgram> getProgramsForChannel(String channelId) {
+    return _programs.where((program) => program.channelId == channelId).toList();
+  }
 }

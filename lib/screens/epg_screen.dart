@@ -125,7 +125,7 @@ class _EPGScreenState extends State<EPGScreen> {
     );
   }
 
-  Widget _buildChannelRow(Channel channel, List<EPGProgram> programs) {
+  Widget _buildChannelRow(Channel channel, List<EpgProgram> programs) {
     return Container(
       height: 80,
       decoration: BoxDecoration(
@@ -207,7 +207,7 @@ class _EPGScreenState extends State<EPGScreen> {
     );
   }
 
-  Widget _buildProgramCard(EPGProgram program) {
+  Widget _buildProgramCard(EpgProgram program) {
     final now = DateTime.now();
     final isLive = now.isAfter(program.startTime) && now.isBefore(program.endTime);
     final isPast = now.isAfter(program.endTime);

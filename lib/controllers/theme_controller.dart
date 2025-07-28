@@ -14,6 +14,7 @@ class ThemeController extends GetxController {
 
   // Getters
   String get currentTheme => _currentTheme.value;
+  RxString get currentThemeName => _currentTheme; // Observable getter for UI binding
   bool get isDarkMode => _isDarkMode.value;
   double get fontSize => _fontSize.value;
   Map<String, Color> get customColors => _customColors;
@@ -86,6 +87,16 @@ class ThemeController extends GetxController {
     
     await _prefs.setBool('dark_mode', _isDarkMode.value);
     update();
+  }
+
+  // Alias method for compatibility with settings screen
+  Future<void> toggleThemeMode() async {
+    await toggleDarkMode();
+  }
+
+  // Alias method for compatibility with app controller
+  Future<void> setTheme(String name) async {
+    await changeTheme(name);
   }
 
   Future<void> changeFontSize(double scale) async {

@@ -1,8 +1,11 @@
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:streamify/models/channel.dart';
+import 'package:streamify/models/recording.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import '../services/database_service.dart';
+import 'package:streamify/controllers/theme_controller.dart';
 import '../utils/constants.dart';
 import '../utils/platform_utils.dart';
 

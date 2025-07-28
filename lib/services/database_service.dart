@@ -333,6 +333,24 @@ class DatabaseService {
     return List.generate(maps.length, (i) => EpgProgram.fromDatabase(maps[i]));
   }
 
+  Future<List<EpgProgram>> getEpgForDate(DateTime date) async {
+    final db = await database;
+    final startOfDay = DateTime(date.year, date.month, date.day);
+    final endOfDay = startOfDay.add(const Duration(days: 1));
+    
+    final List<Map<String, dynamic>> maps = await db.query(
+      Constants.tableEpg,
+      where: 'start_time >= ? AND start_time < ?',
+      whereArgs: [
+        startOfDay.toIso8601String(),
+        endOfDay.toIso8601String(),
+      ],
+      orderBy: 'start_time ASC',
+    );
+    
+    return List.generate(maps.length, (i) => EpgProgram.fromDatabase(maps[i]));
+  }
+
   Future<void> clearOldEpgData(DateTime before) async {
     final db = await database;
     await db.delete(

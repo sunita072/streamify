@@ -79,11 +79,11 @@ class AppTheme {
           ),
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: const CardThemeData(
         color: surfaceLight,
         elevation: 4,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -144,11 +144,11 @@ class AppTheme {
           ),
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: const CardThemeData(
         color: surfaceDark,
         elevation: 4,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       inputDecorationTheme: InputDecorationTheme(
@@ -185,11 +185,11 @@ class AppTheme {
           ),
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: const CardThemeData(
         color: surfaceDark,
         elevation: 8,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
         ),
       ),
       focusColor: primaryColor.withOpacity(0.3),

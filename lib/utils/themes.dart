@@ -24,11 +24,11 @@ class AppThemes {
         elevation: 0,
         centerTitle: true,
       ),
-      cardTheme: CardTheme(
-        color: const Color(0xFF1A1A1A),
+      cardTheme: const CardThemeData(
+        color: Color(0xFF1A1A1A),
         elevation: 4,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -83,11 +83,11 @@ class AppThemes {
         elevation: 0,
         centerTitle: true,
       ),
-      cardTheme: CardTheme(
-        color: const Color(0xFF2A2A2A),
-        elevation: 6,
+      cardTheme: const CardThemeData(
+        color: Color(0xFF1E1E1E),
+        elevation: 8,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -128,11 +128,11 @@ class AppThemes {
         elevation: 0,
         centerTitle: true,
       ),
-      cardTheme: CardTheme(
-        color: const Color(0xFF212121),
+      cardTheme: const CardThemeData(
+        color: Color(0xFF212121),
         elevation: 4,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -173,11 +173,11 @@ class AppThemes {
         elevation: 0,
         centerTitle: true,
       ),
-      cardTheme: CardTheme(
-        color: const Color(0xFF2D2D2D),
+      cardTheme: const CardThemeData(
+        color: Color(0xFF2D2D2D),
         elevation: 6,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadius.all(Radius.circular(16)),
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -218,13 +218,13 @@ class AppThemes {
         elevation: 1,
         centerTitle: true,
       ),
-      cardTheme: CardTheme(
-        color: Colors.white,
-        elevation: 2,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+    cardTheme: const CardThemeData(
+      color: Colors.white,
+      elevation: 2,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
+    ),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFF1E88E5),

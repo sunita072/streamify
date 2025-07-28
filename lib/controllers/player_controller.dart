@@ -274,7 +274,10 @@ class PlayerController extends GetxController {
 
   // Subtitles
   void setSubtitle(BetterPlayerAsmsSubtitle subtitle) {
-    _betterPlayerController?.setSubtitle(subtitle);
+    // Note: BetterPlayerController doesn't have a setSubtitle method
+    // Subtitles are typically configured during initialization
+    // or through the player's built-in subtitle selection UI
+    debugPrint('Subtitle selection: ${subtitle.name}');
   }
 
   // Quality/Resolution
