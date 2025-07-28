@@ -236,4 +236,5 @@ class Channel {
   String get displayName => name.trim().isEmpty ? 'Unknown Channel' : name;
   String get displayGroup => group?.trim().isEmpty == false ? group! : 'Other';
   String get displayCategory => category?.trim().isEmpty == false ? category! : 'General';
+  String? get logoUrl => logo;
 }

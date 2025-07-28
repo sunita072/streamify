@@ -13,11 +13,19 @@ class PlaylistController extends GetxController {
   
   final Dio _dio = Dio();
 
+  // Additional observables for missing features
+  final _favoriteChannels = <Channel>[].obs;
+  final _recentChannels = <Channel>[].obs;
+  final _filteredChannels = <Channel>[].obs;
+  
   // Getters
   List<Playlist> get playlists => _playlists;
   bool get isLoading => _isLoading.value;
   Playlist? get selectedPlaylist => _selectedPlaylist.value;
   List<Channel> get channels => _channels;
+  List<Channel> get favoriteChannels => _favoriteChannels;
+  List<Channel> get recentChannels => _recentChannels;
+  List<Channel> get filteredChannels => _filteredChannels.isEmpty ? _channels : _filteredChannels;
 
   @override
   void onInit() {
@@ -329,12 +337,66 @@ class PlaylistController extends GetxController {
         _channels[index] = channel.copyWith(isFavorite: newFavoriteStatus);
       }
       
+      // Update favorites list
+      if (newFavoriteStatus) {
+        _favoriteChannels.add(_channels[index]);
+      } else {
+        _favoriteChannels.removeWhere((c) => c.id == channel.id);
+      }
+      
       Get.snackbar(
         'Success', 
         newFavoriteStatus ? 'Added to favorites' : 'Removed from favorites',
       );
     } catch (e) {
       Get.snackbar('Error', 'Failed to update favorite: $e');
+    }
+  }
+
+  // Method aliases for compatibility
+  void toggleFavorite(Channel channel) => toggleChannelFavorite(channel);
+  
+  Future<void> addPlaylistFromUrl(String name, String url) async {
+    final playlist = Playlist(
+      name: name,
+      url: url,
+      type: url.toLowerCase().contains('.m3u') ? Constants.playlistTypeM3U : Constants.playlistTypeXtream,
+      createdAt: DateTime.now(),
+      lastUpdated: DateTime.now(),
+    );
+    await addPlaylist(playlist);
+  }
+  
+  Future<void> removePlaylist(Playlist playlist) async {
+    if (playlist.id != null) {
+      await deletePlaylist(playlist.id!);
+    }
+  }
+  
+  void addToHistory(Channel channel) {
+    // Remove if already in history
+    _recentChannels.removeWhere((c) => c.id == channel.id);
+    // Add to beginning
+    _recentChannels.insert(0, channel);
+    // Keep only last 50 items
+    if (_recentChannels.length > 50) {
+      _recentChannels.removeRange(50, _recentChannels.length);
+    }
+  }
+  
+  void removeFromHistory(Channel channel) {
+    _recentChannels.removeWhere((c) => c.id == channel.id);
+  }
+  
+  void clearHistory() {
+    _recentChannels.clear();
+  }
+  
+  void filterChannels(String query) {
+    if (query.isEmpty) {
+      _filteredChannels.clear();
+    } else {
+      _filteredChannels.value = searchChannels(query);
     }
   }
 }

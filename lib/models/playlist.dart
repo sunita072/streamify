@@ -185,8 +185,8 @@ class Playlist {
       description: description ?? this.description,
       metadata: metadata ?? this.metadata,
     );
-  }
-
+}
+  
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
@@ -272,4 +272,7 @@ class Playlist {
     final baseUrl = url.endsWith('/') ? url.substring(0, url.length - 1) : url;
     return '$baseUrl/portal.php';
   }
+
+  // Channels getter placeholder
+  List<String> get channels => [];
 }
