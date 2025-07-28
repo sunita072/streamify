@@ -2,7 +2,6 @@ import 'package:get/get.dart';
 import 'package:dio/dio.dart';
 import '../models/epg_program.dart';
 import '../services/database_service.dart';
-import '../utils/constants.dart';
 
 class EpgController extends GetxController {
   final _programs = <EpgProgram>[].obs;

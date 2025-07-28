@@ -1,5 +1,4 @@
 import 'package:workmanager/workmanager.dart';
-import 'package:get/get.dart';
 import '../services/database_service.dart';
 import '../utils/constants.dart';
 

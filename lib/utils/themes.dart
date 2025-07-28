@@ -11,13 +11,11 @@ class AppThemes {
       colorScheme: const ColorScheme.dark(
         primary: Color(0xFF1E88E5),
         secondary: Color(0xFF42A5F5),
-        surface: Color(0xFF1A1A1A),
-        background: Color(0xFF0A0A0A),
+        surface: Color(0xFF0A0A0A),
         error: Color(0xFFE53935),
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: Colors.white,
-        onBackground: Colors.white,
         onError: Colors.white,
       ),
       appBarTheme: const AppBarTheme(
@@ -72,13 +70,11 @@ class AppThemes {
       colorScheme: const ColorScheme.dark(
         primary: Color(0xFFE50914),
         secondary: Color(0xFFFF6B6B),
-        surface: Color(0xFF2A2A2A),
-        background: Color(0xFF141414),
+        surface: Color(0xFF141414),
         error: Color(0xFFE50914),
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: Colors.white,
-        onBackground: Colors.white,
         onError: Colors.white,
       ),
       appBarTheme: const AppBarTheme(
@@ -119,13 +115,11 @@ class AppThemes {
       colorScheme: const ColorScheme.dark(
         primary: Color(0xFFFF0000),
         secondary: Color(0xFFFF4444),
-        surface: Color(0xFF212121),
-        background: Color(0xFF0F0F0F),
+        surface: Color(0xFF0F0F0F),
         error: Color(0xFFFF0000),
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: Colors.white,
-        onBackground: Colors.white,
         onError: Colors.white,
       ),
       appBarTheme: const AppBarTheme(
@@ -166,13 +160,11 @@ class AppThemes {
       colorScheme: const ColorScheme.dark(
         primary: Color(0xFFE5A00D),
         secondary: Color(0xFFFFC107),
-        surface: Color(0xFF2D2D2D),
-        background: Color(0xFF1A1A1A),
+        surface: Color(0xFF1A1A1A),
         error: Color(0xFFE53935),
         onPrimary: Colors.black,
         onSecondary: Colors.black,
         onSurface: Colors.white,
-        onBackground: Colors.white,
         onError: Colors.white,
       ),
       appBarTheme: const AppBarTheme(
@@ -213,13 +205,11 @@ class AppThemes {
       colorScheme: const ColorScheme.light(
         primary: Color(0xFF1E88E5),
         secondary: Color(0xFF42A5F5),
-        surface: Colors.white,
-        background: Color(0xFFF5F5F5),
+        surface: Color(0xFFF5F5F5),
         error: Color(0xFFE53935),
         onPrimary: Colors.white,
         onSecondary: Colors.white,
         onSurface: Colors.black87,
-        onBackground: Colors.black87,
         onError: Colors.white,
       ),
       appBarTheme: const AppBarTheme(

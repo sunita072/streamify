@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import '../utils/assets.dart';
 import '../utils/platform_utils.dart';
 
@@ -106,6 +105,12 @@ class _SplashScreenState extends State<SplashScreen>
     await Future.delayed(const Duration(milliseconds: 200));
   }
 
+  Future<bool> _checkIfTV() async {
+    final isAndroidTV = await PlatformUtils.isAndroidTV;
+    final isAppleTV = await PlatformUtils.isAppleTV;
+    return isAndroidTV || isAppleTV;
+  }
+
   @override
   void dispose() {
     _animationController.dispose();
@@ -117,7 +122,7 @@ class _SplashScreenState extends State<SplashScreen>
     return Scaffold(
       backgroundColor: _getBackgroundColor(),
       body: FutureBuilder<bool>(
-        future: PlatformUtils.isAndroidTV.then((isTV) => isTV || PlatformUtils.isAppleTV),
+        future: _checkIfTV(),
         builder: (context, snapshot) {
           final isTV = snapshot.data ?? false;
           
@@ -226,7 +231,7 @@ class _SplashScreenState extends State<SplashScreen>
         image: AssetImage(Assets.splashScreen),
         fit: BoxFit.cover,
         colorFilter: ColorFilter.mode(
-          Colors.black.withOpacity(0.3),
+          Colors.black.withValues(alpha: 0.3),
           BlendMode.darken,
         ),
       ),
@@ -244,7 +249,7 @@ class _SplashScreenState extends State<SplashScreen>
         borderRadius: BorderRadius.circular(isTV ? 24 : 16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 10),
           ),
@@ -281,7 +286,7 @@ class _SplashScreenState extends State<SplashScreen>
                   end: Alignment.bottomRight,
                   colors: [
                     Theme.of(context).primaryColor,
-                    Theme.of(context).primaryColor.withOpacity(0.7),
+                    Theme.of(context).primaryColor.withValues(alpha: 0.7),
                   ],
                 ),
               ),

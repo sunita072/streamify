@@ -13,7 +13,6 @@ import 'controllers/theme_controller.dart';
 import 'screens/splash_screen.dart';
 import 'services/database_service.dart';
 import 'services/background_service.dart';
-import 'utils/constants.dart';
 import 'utils/themes.dart';
 
 void main() async {
@@ -59,17 +58,17 @@ class StreamifyApp extends StatelessWidget {
       initialBinding: AppBinding(),
       shortcuts: {
         // Android TV remote control shortcuts
-        LogicalKeySet(LogicalKeyboardKey.select): const ActivateIntent(),
-        LogicalKeySet(LogicalKeyboardKey.arrowUp): const DirectionalFocusIntent(TraversalDirection.up),
-        LogicalKeySet(LogicalKeyboardKey.arrowDown): const DirectionalFocusIntent(TraversalDirection.down),
-        LogicalKeySet(LogicalKeyboardKey.arrowLeft): const DirectionalFocusIntent(TraversalDirection.left),
-        LogicalKeySet(LogicalKeyboardKey.arrowRight): const DirectionalFocusIntent(TraversalDirection.right),
-        LogicalKeySet(LogicalKeyboardKey.escape): const DismissIntent(),
-        LogicalKeySet(LogicalKeyboardKey.mediaPlay): const PlayPauseIntent(),
-        LogicalKeySet(LogicalKeyboardKey.mediaPlayPause): const PlayPauseIntent(),
-        LogicalKeySet(LogicalKeyboardKey.mediaStop): const StopIntent(),
-        LogicalKeySet(LogicalKeyboardKey.channelUp): const NextChannelIntent(),
-        LogicalKeySet(LogicalKeyboardKey.channelDown): const PreviousChannelIntent(),
+        LogicalKeySet(LogicalKeyboardKey.select): ActivateIntent(),
+        LogicalKeySet(LogicalKeyboardKey.arrowUp): DirectionalFocusIntent(TraversalDirection.up),
+        LogicalKeySet(LogicalKeyboardKey.arrowDown): DirectionalFocusIntent(TraversalDirection.down),
+        LogicalKeySet(LogicalKeyboardKey.arrowLeft): DirectionalFocusIntent(TraversalDirection.left),
+        LogicalKeySet(LogicalKeyboardKey.arrowRight): DirectionalFocusIntent(TraversalDirection.right),
+        LogicalKeySet(LogicalKeyboardKey.escape): DismissIntent(),
+        LogicalKeySet(LogicalKeyboardKey.mediaPlay): PlayPauseIntent(),
+        LogicalKeySet(LogicalKeyboardKey.mediaPlayPause): PlayPauseIntent(),
+        LogicalKeySet(LogicalKeyboardKey.mediaStop): StopIntent(),
+        LogicalKeySet(LogicalKeyboardKey.channelUp): NextChannelIntent(),
+        LogicalKeySet(LogicalKeyboardKey.channelDown): PreviousChannelIntent(),
       },
       actions: {
         PlayPauseIntent: PlayPauseAction(),

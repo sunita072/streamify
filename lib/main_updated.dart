@@ -103,7 +103,7 @@ class StreamifyApp extends StatelessWidget {
             if (isTV) {
               return MediaQuery(
                 data: MediaQuery.of(context).copyWith(
-                  textScaleFactor: PlatformUtils.getTVUIScale(),
+                  textScaler: TextScaler.linear(PlatformUtils.getTVUIScale()),
                 ),
                 child: SafeArea(
                   minimum: PlatformUtils.getTVSafeArea(),
