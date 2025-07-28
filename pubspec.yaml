@@ -1,0 +1,92 @@
+name: streamify
+description: Premium IPTV Player for Android TV with M3U, Xtream Codes, and Stalker Portal support
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # UI & Navigation
+  cupertino_icons: ^1.0.6
+  get: ^4.6.6
+  flutter_staggered_grid_view: ^0.7.0
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.0
+  flutter_svg: ^2.0.7
+  
+  # Video Player & Media
+  video_player: ^2.8.1
+  better_player: ^0.0.63
+  wakelock_plus: ^1.2.1
+  screen_brightness: ^0.2.2+1
+  volume_controller: ^2.0.7
+  
+  # Network & HTTP
+  http: ^1.1.0
+  dio: ^5.3.2
+  connectivity_plus: ^5.0.1
+  
+  # Database & Storage
+  sqflite: ^2.3.0
+  shared_preferences: ^2.2.2
+  path_provider: ^2.1.1
+  permission_handler: ^11.0.1
+  
+  # XML & JSON Parsing
+  xml: ^6.4.2
+  xml2json: ^5.3.6
+  
+  # Background Services
+  workmanager: ^0.5.2
+  flutter_background_service: ^5.0.5
+  
+  # Device Info & Hardware
+  device_info_plus: ^9.1.0
+  android_intent_plus: ^4.0.3
+  
+  # Date & Time
+  intl: ^0.18.1
+  timezone: ^0.9.2
+  
+  # Encryption & Security
+  crypto: ^3.0.3
+  encrypt: ^5.0.1
+  
+  # File Management
+  file_picker: ^6.1.1
+  path: ^1.8.3
+  
+  # Utils
+  uuid: ^4.1.0
+  url_launcher: ^6.2.1
+  package_info_plus: ^8.3.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.7
+
+flutter:
+  uses-material-design: true
+  
+  # Assets - Add your images, icons, logos here
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/logos/
+    - assets/themes/
+  
+  # Custom fonts
+  fonts:
+    - family: Roboto
+      fonts:
+        - asset: assets/fonts/Roboto-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/Roboto-Bold.ttf
+          weight: 700
